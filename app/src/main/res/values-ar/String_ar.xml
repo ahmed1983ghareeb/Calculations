@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الحسابات</string>
+    <string name="generate">إنشاء سوال</string>
+    <string name="click_generate_button_to_get_a_question">اضغط على زر انشاء سوال</string>
+    <string name="check_result">النتيجه</string>
+    <string name="clear">مسح</string>
+    <string name="statistics">الاحصائيات</string>
+    <string name="quit">خروج</string>
+    <string name="write_your_answer">اكتب الاجابه</string>
+    <string-array name="dificulity">
+        <item>سهل</item>
+        <item>صعب</item>
+    </string-array>
+
+</resources>
