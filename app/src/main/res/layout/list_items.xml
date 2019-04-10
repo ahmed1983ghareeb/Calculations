@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/textViewListOperation"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="20sp"
@@ -14,15 +14,16 @@
 
     <TextView
         android:id="@+id/textViewListAnswer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="20sp"
-        android:text="Answer" />
+        android:text="Answer"
+        />
 
     <TextView
         android:id="@+id/textViewListTime"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="20sp"
@@ -30,7 +31,7 @@
 
     <TextView
         android:id="@+id/textViewListStatus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="20sp"

@@ -57,13 +57,15 @@
             <ListView
                 android:id="@+id/resultsListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20sp">
+            android:layout_marginTop="20sp"
+            >
 
             <TextView
                 android:id="@+id/textViewStatistics"
@@ -71,6 +73,26 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/btnSaveToFile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Save to file" />
+
+            <Button
+                android:id="@+id/btnEmail"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="email result" />
         </TableRow>
 
     </TableLayout>
