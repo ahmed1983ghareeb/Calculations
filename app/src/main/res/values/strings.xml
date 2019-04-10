@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Calculations</string>
-    <string name="generate">generate</string>
-    <string name="click_generate_button_to_get_a_question">Click Generate Button to get a question</string>
+    <string name="generate">start</string>
+    <string name="click_generate_button_to_get_a_question">Click Start Button to get a question</string>
     <string name="check_result">Check Result</string>
     <string name="clear">clear</string>
     <string name="statistics">Statistics</string>
     <string name="quit">Quit</string>
     <string name="write_your_answer">Write your answer</string>
+    <string name="stop">Stop</string>
     <string-array name="dificulity">
         <item>Easy</item>
         <item>Hard</item>

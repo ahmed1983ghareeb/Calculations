@@ -12,5 +12,5 @@
         <item>سهل</item>
         <item>صعب</item>
     </string-array>
-
+    <string name="stop">ايقاف</string>
 </resources>
