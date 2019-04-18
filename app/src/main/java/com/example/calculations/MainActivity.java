@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnResult:
                 checkResult();
+                stopGame();
+                startGame();
                 break;
             case R.id.btnShowAll:
                 stopGame();
@@ -206,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onTick(long millisUntilFinished) {
 
-                interval = interval - 100;
+               // interval = interval - 100;
                 textViewTimer.setText("Time left: "+String.valueOf(timer));
                 timer = timer - 1;
             }

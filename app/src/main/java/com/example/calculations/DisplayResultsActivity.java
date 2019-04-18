@@ -42,11 +42,17 @@ int totalElapsedTime = 0;
         setContentView(R.layout.activity_display_results);
 
         //textView = findViewById(R.id.textViewResults);
+
+        initialize();
+
+    }
+
+    public void initialize(){
         textViewStatistic = findViewById(R.id.textViewStatistics);
-btnSave = findViewById(R.id.btnSaveToFile);
-btnSave.setOnClickListener(this);
-btnEmail = findViewById(R.id.btnEmail);
-btnEmail.setOnClickListener(this);
+        btnSave = findViewById(R.id.btnSaveToFile);
+        btnSave.setOnClickListener(this);
+        btnEmail = findViewById(R.id.btnEmail);
+        btnEmail.setOnClickListener(this);
         results = (ArrayList<Result>) getIntent().getExtras().getSerializable("tag1");
         resultsAdapter = new MyArrayAdapter(this, R.layout.list_items,results);
         resulsListView = findViewById(R.id.resultsListView);
@@ -61,15 +67,15 @@ btnEmail.setOnClickListener(this);
             totalElapsedTime += results.get(i).getTimeElapsed();
 
         }
-       // textView.append("correct answers = "+ correctCounter+"\nWrong answers = "+ (results.size()-correctCounter));
+        // textView.append("correct answers = "+ correctCounter+"\nWrong answers = "+ (results.size()-correctCounter));
         correctPercent = (float) correctCounter/results.size() *100;
         summary = "Summary :\n"+
                 "Total questions : "+ results.size() +"\n" +
-                "Total answed questions : "+ (results.size()- failCounter)+ "\n" +
-                "Total Duration: " + (results.size()*10) + " Second "+"\n"+
+                "Total answred questions : "+ (results.size()- failCounter)+ "\n" +
+                "Total Duration: " + ((results.size()*10)) + " Seconds "+"\n"+
                 "Total elapsed time : " + totalElapsedTime + " Second "+"\n" +
-                "% correct answer : " + Math.round(correctPercent)+"\n" +
-                "% wrong answer : " + (100-Math.round(correctPercent))+"\n" +
+                "% correct answer : " + Math.round(correctPercent)+"%\n" +
+                "% wrong answer : " + (100-Math.round(correctPercent))+"%\n" +
                 "Velocity : " + ((double)totalElapsedTime / (results.size()*10)); //Total elapsed time/Total duration
         textViewStatistic.setText(summary);
     }
@@ -80,14 +86,17 @@ btnEmail.setOnClickListener(this);
 
         switch (v.getId()){
             case R.id.btnSaveToFile:
+                String fileTitle = "========================= Game Result ========================= \n";
                 Context ctx = getApplicationContext();
+                String resultLine = "";
                 FileController fileController = new FileController();
-                fileController.writeFile(ctx, "game_result.txt", summary);
-                    /*
-                    This comments code can also write data to android internal file.
-                    File file = new File(getFilesDir(), userEmalFileName);
-                    writeDataToFile(file, userEmail);
-                    */
+
+                fileController.writeFile(ctx, "game_result.txt", fileTitle);
+                for(int i = 0; i<results.size();i++){
+                    resultLine = results.get(i).toString();
+                    fileController.appendFile(ctx,"game_result.txt",resultLine);
+                }
+                fileController.appendFile(ctx,"game_result.txt",summary);
                     break;
             case R.id.btnEmail:
                 Toast.makeText(this,"email clicked", Toast.LENGTH_SHORT).show();

@@ -27,7 +27,7 @@ public class MyArrayAdapter extends ArrayAdapter<Result> {
 
         String question = getItem(position).getQuestion();
         String answer = String.valueOf(getItem(position).getResult());
-        String elapsetime = String.valueOf(getItem(position).getTimeElapsed()) + " seconds";
+        String elapsetime = String.valueOf(getItem(position).getTimeElapsed()) + " sec";
         String status = getItem(position).getCorrect_wrong();
 
 

@@ -68,14 +68,28 @@ public class FileController {
     public void writeFile(Context context, String fileName, String data){
         File file = new File(context.getFilesDir(), fileName);
         try{
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
 
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName,Context.MODE_PRIVATE));
 
-            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+            outputStreamWriter.write(data);
 
-            bufferedWriter.write(data);
             Toast.makeText(context,"write succesfull",Toast.LENGTH_SHORT).show();
+            outputStreamWriter.close();
+
+        }catch (Exception e){
+            Toast.makeText(context,"file error!",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void appendFile(Context context, String fileName, String data){
+        File file = new File(context.getFilesDir(), fileName);
+        try{
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName,Context.MODE_APPEND));
+
+            outputStreamWriter.write(data);
+
+            Toast.makeText(context,"Appending succesfull!",Toast.LENGTH_SHORT).show();
+            outputStreamWriter.close();
 
         }catch (Exception e){
             Toast.makeText(context,"file error!",Toast.LENGTH_SHORT).show();

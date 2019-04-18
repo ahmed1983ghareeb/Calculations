@@ -9,15 +9,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="20sp"
-        android:text="Operation" />
+        style="@style/table_head"
+        android:text="Operation"
+        />
 
     <TextView
         android:id="@+id/textViewListAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="20sp"
+        style="@style/table_data"
         android:text="Answer"
         />
 
@@ -26,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="20sp"
+        style="@style/table_data"
         android:text="time" />
 
     <TextView
@@ -34,6 +35,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="20sp"
+        style="@style/table_data"
         android:text="status" />
 </LinearLayout>

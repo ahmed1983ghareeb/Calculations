@@ -57,8 +57,8 @@ public class Result implements Serializable {
                 " " + operator +
                 " " + ((int)num2) +
                 "   " + result +
-                "  " + timeElapsed  +
                 "  " +correct_wrong +
-                "\n----------------------------------------\n";
+                " time elapsed = "+ timeElapsed + " Seconds." +
+                "\n-------------------------------------------------\n";
     }
 }
